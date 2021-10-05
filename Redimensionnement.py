@@ -4,7 +4,7 @@ import numpy as np
 img = cv.imread('C:/Users/yassi/Documents/GitHub/TraitementImage/Lena.png')
 
 
-scale = (200, 200)
+scale = (2000, 2000)
 resizedImage = cv.resize(img, scale, interpolation=cv.INTER_AREA)
 #cv.imshow('new Lena gray', resizedImage)
 #cv.waitKey(1000)

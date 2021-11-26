@@ -14,7 +14,7 @@ for i in range(0,resizedImage.shape[0]):
     for j in range(0,resizedImage.shape[1]):
         pixel = resizedImage[i][j]
         #pixel2 = resizedImage[i][j] = [192,192,192]
-        print (pixel)
+        #print (pixel)
 
 cv.imwrite('pixel.png', pixel)
 cv.imshow('pixel', pixel)

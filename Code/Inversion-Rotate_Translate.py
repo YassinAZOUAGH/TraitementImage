@@ -45,7 +45,7 @@ def rotate_bound(img, angle):
     #effectuer la rotation réelle et renvoyer l'image
     return cv.warpAffine(img, M, (nW, nH))
 
-img_rotate = rotate_bound(img, 60)
+img_rotate = rotate_bound(img, 20) # degré de rotation <====================================
 cv.imshow('imh_rotate', img_rotate)
 cv.waitKey(1000)
 

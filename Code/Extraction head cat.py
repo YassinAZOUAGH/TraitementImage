@@ -1,7 +1,7 @@
 
 
 import cv2 as cv
-img = cv.imread('/testImages/cat.bmp')
+img = cv.imread('C:/Users/yassi/Documents/GitHub/TraitementImage/testImages/cat.bmp')
 
 print(type(img))
 

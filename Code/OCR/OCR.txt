@@ -1,0 +1,100 @@
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Chef Fraise Rémy
+
+Délicieux Fromage Saucisson
+
+Eiffel Louvre
+
+Emile Pomme
+
+ii
+S;A/;U;C;]I]S/S/O;NI 5
+D/E|P|/O/]M/M/E|]E|F]F
+E/T;/s|H|I/N/ T/Z/]RIR
+L/O;U;/V/]R{IE|]O/T/Ola4
+0;Q/H/|Y/;/T}AaAl]Rimit
+
+C)}/c}y/u|sS|F/E|/Lials
+I} kK/W/AaA;]|R|EF/O/x/GlE
+E;/M/;/I/L|E;/E/c/H|E/F
+U;/R{|H|U/JM|L]Y/O/]N]JA
+X/T/Z/A;Y/G|]O;|R/alN
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+Correlation
+
+ 
+
+En travail sur une image en niveau de gris,
+
+Utiliser la brary Tesseract en python pour OCR
+
+Al'examen aura l'algorithme d’OCR
+Lyoral
+Dov hl TERW-Theaves
+Dov hl TERW-Theaves
+Correlation
+
+ 
+
+En travail sur une image en niveau de gris,
+
+Utiliser la brary Tesseract en python pour OCR
+
+Al'examen aura l'algorithme d’OCR
+Correlation
+
+ 
+
+En travail sur une image en niveau de gris,
+
+Utiliser la brary Tesseract en python pour OCR
+
+Al'examen aura l'algorithme d’OCR

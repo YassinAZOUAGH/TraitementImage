@@ -5,6 +5,10 @@ img = cv.imread('C:/Users/yassi/Documents/GitHub/TraitementImage/Lena.png')
 
 histogram = np.zeros(256)
 
+print("G",img[0,0,0])
+print("B",img[0,0,1])
+print("R",img[0,0,2])
+
 def grayScale(img):
     for i in range(img.shape[0]):
         for j in range(img.shape[1]):

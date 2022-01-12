@@ -1,0 +1,82 @@
+
+import cv2
+import numpy as np
+from numba import cuda
+import time
+
+
+def binarize(imgGray,threshold):
+    for (i,line) in enumerate(imgGray):
+        for(j,pixel) in enumerate(line):
+            value = imgGray[i][j]
+            if value < threshold:
+                imgGray[i][j] = 0
+            else:
+                imgGray[i][j] = 255
+    return imgGray
+
+def click_event(event, x, y, flags, params):
+	# checking for left mouse clicks
+	if event == cv2.EVENT_LBUTTONDOWN:
+		print(x, ' ', y)
+		font = cv2.FONT_HERSHEY_SIMPLEX
+		cv2.putText(img, str(x) + ',' +
+					str(y), (x,y), font,
+					1, (255, 0, 0), 2)
+		cv2.imshow('image', img)
+
+	# checking for right mouse clicks
+	if event==cv2.EVENT_RBUTTONDOWN:
+
+		# displaying the coordinates
+		# on the Shell
+		print(x, ' ', y)
+
+		# displaying the coordinates
+		# on the image window
+		font = cv2.FONT_HERSHEY_SIMPLEX
+		b = img[y, x, 0]
+		g = img[y, x, 1]
+		r = img[y, x, 2]
+		cv2.putText(img, str(b) + ',' +
+					str(g) + ',' + str(r),
+					(x,y), font, 1,
+					(255, 255, 0), 2)
+		cv2.imshow('image', img)
+
+
+
+
+
+
+NewDim = (500, 500)
+image1 = cv2.imread('C:/Users/yassi/Documents/GitHub/TraitementImage/testImages/ExamenImg.png')
+resizedImage = cv2.resize(image1, NewDim, interpolation=cv2.INTER_AREA)
+
+img = cv2.cvtColor(resizedImage, cv2.COLOR_BGR2GRAY)
+
+cv2.imshow('Image binarized', binarize(img , 150))
+cv2.imwrite('MyImage.png', img)
+cv2.waitKey(0)
+
+cv2.imshow('imageToClick', binarize(img , 150))
+cv2.setMouseCallback('imageToClick', click_event)
+cv2.waitKey(0)
+
+Iban2 = img[263:307,79:335]
+Date = img[122:154,11:87]
+Nom = img[197:234,82:289]
+Assurance = img[341:378,87:259]
+Iban1 = img[157:195,83:326]
+Facture = img[414:452,88:258]
+Montant = img[118:145,404:487]
+
+
+cv2.imshow('IBAN', Iban2)
+cv2.imshow('Date', Date)
+cv2.imshow('Nom', Nom)
+cv2.imshow('Iban1', Iban1)
+cv2.imshow('Assurance', Assurance)
+cv2.imshow('Facture', Facture)
+cv2.imshow('Montant', Montant)
+cv2.waitKey(0)

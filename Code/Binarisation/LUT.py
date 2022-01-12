@@ -1,24 +1,28 @@
 import cv2 as cv
 import numpy as np
 import matplotlib.pyplot as plt
+from numba import cuda
 
-#img = cv.imread('C:/Users/yassi/Documents/GitHub/TraitementImage/testImages/TestLUT.jpg')
-img = cv.imread('C:/Users/yassi/Documents/GitHub/TraitementImage/testImages/lena.png')
+image = cv.imread('C:/Users/yassi/Documents/GitHub/TraitementImage/Lena.png')
 
-cv.imshow('new Lena gray', img)
-cv.waitKey(1000)
+@cuda.jit(device=True)
+def julia(x, y, max_iters):
+    """
+    Given the real and imaginary parts of a complex number,
+    determine if it is a candidate for membership in the Julia
+    set given a fixed number of iterations.
+    """
+    i = 0
+    c = complex(-0.8, 0.156)
+    a = complex(x,y)
+    for i in range(max_iters):
+        a = a*a + c
+        if (a.real*a.real + a.imag*a.imag) > 1000:
+            return 0
+    return 255
 
-lut = np.array([256-i for i in range(256)])
-#lut = np.arange(256)//128
-plt.figure();
-plt.plot(range(256),lut,'b+-')
-plt.show()
+threadsperblock = 16
+xblocks = (image.shape[1] + (threadsperblock - 1)) // threadsperblock
+yblocks = (image.shape[0] + (threadsperblock - 1)) // threadsperblock
 
-img_out = lut[img]
-for y in range(img.shape[0]):
-    for x in range(img.shape[1]):
-        img_out[y,x] = lut[img[y,x]]
-
-plt.figure();
-plt.imshow(img_out, cmap=plt.cm.gray)
-plt.show()
+x, y = cuda.grid(2)

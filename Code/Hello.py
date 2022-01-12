@@ -27,7 +27,12 @@ cv.waitKey(1000)
 #cv.destroyWindow()
 
 
-
+'''
+start = time.time()
+#**********************#
+end = time.time()
+print('temps excution' ,end - start)
+'''
 
 
 
